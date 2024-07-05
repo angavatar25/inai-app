@@ -13,7 +13,7 @@ import GrossIncome from "../../components/GrossIncome";
 import { Button, DashboardContainer, Title } from "../../styles/dashboard";
 import { FlexBetween, MarginCenter } from "../../styles/general";
 
-import { GrossIncomeData, PerformanceData, addNew, suggestedQueries } from "../../dummy/data";
+import { GrossIncomeData, PerformanceData, addNew, filterGainsData, suggestedQueries } from "../../dummy/data";
 
 const Dashboard = () => {
   const [currentTabNew, setCurrentTabNew] = useState('asset');
@@ -79,7 +79,9 @@ const Dashboard = () => {
       </Title>
       <div>
         <PerformanceCategories
+          filterData={filterGainsData}
           onClickCategory={onClickPortfolioCategory}
+          currentTab={currentPortfolio}
         />
         <PerformanceList
           data={PerformanceData}

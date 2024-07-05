@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 interface TPerformanceCategories {
   onClickCategory: (category: string) => void;
+  filterData: string[];
+  currentTab: string;
 }
-
-const filter = ['all', 'realised gains', 'unrealised gains'];
 
 const Button = styled.button<{ $active: boolean }>`
   background-color: ${props => props.$active ? '#EEF2FF' : 'transparent' };
@@ -22,21 +22,18 @@ const Button = styled.button<{ $active: boolean }>`
 `
 
 const PerformanceCategories = (props: TPerformanceCategories) => {
-  const [currentCategory, setCurrentCategory] = useState('all');
-
   const onClickCategory = (category: string) => {
-    setCurrentCategory(category.toLowerCase());
     props.onClickCategory(category);
   }
 
   return (
     <div>
       <div style={{ display: 'flex', marginTop: '10px', gap: '10px'}}>
-        {filter.map((data) => (
+        {props.filterData.map((data) => (
           <Button
             onClick={() => onClickCategory(data)}
             key={`country-${data}`}
-            $active={currentCategory === data.toLowerCase()}
+            $active={props.currentTab === data.toLowerCase()}
           >
             <p style={{ textTransform: 'capitalize'}}>{data}</p>
           </Button>
