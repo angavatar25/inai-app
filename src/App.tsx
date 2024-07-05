@@ -1,4 +1,5 @@
 import './App.css';
+import Navbar from './components/Navbar';
 
 import Dashboard from './pages/Dashboard';
 import NetAssets from './pages/NetAssets';
@@ -14,10 +15,10 @@ const AppRouter = () => {
   return routes;
 }
 
-
 function App() {
   return (
     <Router>
+      <Navbar/>
       <AppRouter/>
     </Router>
   );
