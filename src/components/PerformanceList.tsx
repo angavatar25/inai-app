@@ -7,10 +7,12 @@ import { FlexOnly, Tag } from "../styles/general"
 import { ListContainer } from "../styles/components/Button"
 
 import formattedAmount from "../helper/moneyFormatter"
+import { tagSignColor } from "../helper/signColor"
 
 import { TData, TPerformanceData } from "../interface/components"
 
 import { performanceInitialData } from "../dummy/initialData"
+import { Sign } from "../enum/sign"
 
 const PerformanceList = (props: TData) => {
   const { currentPortfolio, data } = props;
@@ -39,7 +41,7 @@ const PerformanceList = (props: TData) => {
             <Tag
               $color="#fff"
               $fontSize={12}
-              $bgColor={performance.sign === '+' ? "#22C55E" : performance.sign === '-' ? '#F43F5E' : 'transparent'}
+              $bgColor={tagSignColor({ sign: performance.sign as Sign })}
             >
               {performance.sign ? (<FontAwesomeIcon icon={stockArrow(performance.sign)}/>) : ''}
               {`${performance.sign ? performance.sign : ''}${performance.growth}%`}

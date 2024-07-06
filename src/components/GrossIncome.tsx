@@ -48,8 +48,9 @@ const GrossIncome = (props: TGrossIncome) => {
           <MoneyFontSize>{formattedAmount(incomeData.grossIncome)}</MoneyFontSize>
           <FlexOnly $gap={10}>
             <Tag
-              color="#22C55E"
+              $color="#22C55E"
               $fontSize={14}
+              $bgColor="#fff"
             >
               <FontAwesomeIcon icon={faArrowTrendUp}/>
               {`${incomeData.sign}${incomeData.growth}`} <Span $color="#000" $fontWeight={500}>vs last year</Span>

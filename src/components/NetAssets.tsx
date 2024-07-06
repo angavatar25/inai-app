@@ -55,6 +55,7 @@ const NetAssets = (props: TNetAssets) => {
             </Tag>
             <Tag
               $fontSize={12}
+              $bgColor="#fff"
             >
               last day
             </Tag>
