@@ -1,19 +1,10 @@
-import styled from "styled-components"
 import { GrossIncomeTabData } from "../dummy/data"
+
 import ButtonComponent from "./Button"
-import { useState } from "react";
 
-const TabContainer = styled.div`
-  background-color: #F1F5F9;
-  border-radius: 99px;
-  display: flex;
-  padding: 4px;
-`
+import { TGrossIncomeTab } from "../interface/components";
 
-interface TGrossIncomeTab {
-  isActive: string;
-  onClickTab: (string: string) => void;
-}
+import { TabContainer } from "../styles/components/Tab";
 
 const GrossIncomeTab = (props: TGrossIncomeTab) => {
   const onClickTab = (tab: string) => {

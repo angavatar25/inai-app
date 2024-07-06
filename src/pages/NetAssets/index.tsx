@@ -1,13 +1,17 @@
+import { useEffect, useState } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faMagicWandSparkles } from "@fortawesome/free-solid-svg-icons";
+
 import AssetsBalance from "../../components/AssetsBalance";
 import ButtonComponent from "../../components/Button";
-import { Button, DashboardContainer, Title } from "../../styles/dashboard";
-import { faArrowRight, faMagicWandSparkles } from "@fortawesome/free-solid-svg-icons";
 import Categories from "../../components/Categories";
-import { useEffect, useState } from "react";
-import { FlexBetween } from "../../styles/general";
 import PerformanceCategories from "../../components/PerformanceCategories";
 import AssetsList from "../../components/AssetsList";
+
+import { Button, DashboardContainer, Title } from "../../styles/dashboard";
+import { FlexBetween } from "../../styles/general";
+
 import { DataPerCountries, filterAssetsData, suggestedQueries } from "../../dummy/data";
 
 const initialAssetData = DataPerCountries[0].data.listOfAssets;
@@ -94,4 +98,4 @@ const NetAssets = () => {
   )
 };
 
-export default NetAssets
+export default NetAssets;
