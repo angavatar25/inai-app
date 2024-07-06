@@ -10,67 +10,32 @@ import PerformanceCategories from "../../components/PerformanceCategories";
 import AssetsList from "../../components/AssetsList";
 import { DataPerCountries, filterAssetsData, suggestedQueries } from "../../dummy/data";
 
-const initialAssetData = [
-  {
-    assetType: 'Bank accounts',
-    total: 8903000,
-    isOpen: true,
-    bgColor: '#01B7D4',
-    list: [
-      {
-        name: 'NAB',
-        totalAssets: 6747000,
-        data: [
-          {
-            name: 'Morgan Supperannuation Fund',
-            totalAsset: 1128000
-          }
-        ]
-      }
-    ]
-  },
-  {
-    assetType: 'Managed funds',
-    total: 8903000,
-    isOpen: true,
-    bgColor: '#FA7315',
-    list: [
-      {
-        name: 'NAB',
-        totalAssets: 6747000,
-        data: [
-          {
-            name: 'Morgan Supperannuation Fund',
-            totalAsset: 1128000
-          }
-        ]
-      }
-    ]
-  }
-]
+const initialAssetData = DataPerCountries[0].data.listOfAssets;
 
 const NetAssets = () => {
   const [currentCountry, setCurrentCountry] = useState('all');
   const [currentAssets, setCurrentAssets] = useState('assets class');
-  const [currentAssetsData, setCurrentAssetsData] = useState(initialAssetData);
+  const [currentAssetsData, setCurrentAssetsData] = useState<any | null>(initialAssetData);
 
   const onClickCountryCategory = (selectedCountry: string) => {
-    setCurrentCountry(selectedCountry);
+    setCurrentCountry(selectedCountry.toLowerCase());
   }
 
   const onClickPortfolioCategory = (category: string) => {
     setCurrentAssets(category);
   }
 
-  
-
   useEffect(() => {
     const findAssetsByCountry = DataPerCountries.find((country) => country.country === currentCountry);
 
     if (findAssetsByCountry) {
-      setCurrentAssetsData(findAssetsByCountry?.data.listOfAssets);
+      const { data } = findAssetsByCountry;
+
+      const filterByGroup = data.listOfAssets.filter((data) => data.group === currentAssets);
+
+      setCurrentAssetsData(filterByGroup);
     }
-  }, [currentCountry]);
+  }, [currentCountry, currentAssets]);
 
   return (
     <DashboardContainer>
