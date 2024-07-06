@@ -1,18 +1,6 @@
-import { ReactNode } from "react";
 import { ButtonStyling } from "../styles/components/Button";
 
-interface TButton {
-  bgColor: string;
-  color: string;
-  borderColor?: string;
-  fontWeight?: number;
-  lineHeight?: number;
-  shadow?: boolean;
-  onClickButton?: () => void;
-  fontSize: number;
-  children: ReactNode;
-  style?: any;
-}
+import { TButton } from "../interface/components";
 
 const ButtonComponent = (props: TButton) => {
   const {

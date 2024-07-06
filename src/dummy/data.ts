@@ -4,7 +4,6 @@ import Globe from '../public/assets/globe.svg';
 import AustraliaFlag from '../public/assets/flag-australia.svg';
 import UsaFlag from '../public/assets/flags-usa.svg';
 import EuropeFlag from '../public/assets/flag-europe.svg';
-
 interface TPerformanceData {
   text: string;
   amount: number;
@@ -568,4 +567,11 @@ export const filterAssetsData: string[] = ['assets class', 'entity', 'broker'];
 
 export const suggestedQueries: string[] = [
   'Listed shares balances per month?', 'Liquid  assets per account?', 'What are current portfolio risks?'
-]
+];
+
+export const countries = [
+  { text: 'All', icon: Globe },
+  { text: 'Australia', icon: AustraliaFlag },
+  { text: 'USA', icon: UsaFlag },
+  { text: 'Europe', icon: EuropeFlag },
+];

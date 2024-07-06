@@ -1,70 +1,12 @@
 import { faChevronRight, faFolderOpen, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { FlexBetween, FlexOnly, MarginCenter } from "../styles/general";
+import { FlexBetween, FlexOnly, Header, MarginCenter, Tag } from "../styles/general";
 import formattedAmount from "../helper/moneyFormatter";
 import { useEffect, useState } from "react";
 import { Title } from "../styles/dashboard";
-
-interface TAssetsData {
-  data: TAssetList[];
-}
-
-interface TAssetList {
-  assetType: string;
-  total: number;
-  isOpen: boolean;
-  bgColor: string;
-  group: string;
-  entityTitle: string;
-  list: TAssetData[];
-}
-
-interface TAssetData {
-  name: string;
-  totalAssets: number;
-  growth: number;
-  sign: string;
-  data: TAssets[];
-}
-
-interface TAssets {
-  name: string;
-  totalAsset: number;
-  growth: number;
-  sign: string;
-}
-
-const Tab = styled.div<{ $bgColor: string }>`
-  background-color: ${p => p.$bgColor};
-  border-radius: 99px;
-  padding: 10px;
-  color: #fff;
-  margin: 10px 0 20px 0;
-`
-
-const Tag = styled.div<{ $color?: string, $fontSize: number, $bgColor: string }>`
-  background-color: ${p => p.$bgColor ? p.$bgColor : "#000"};
-  color: ${p => p.$color ? p.$color : "#000"};
-  font-size: ${p => p.$fontSize}px;
-  padding: 4px 8px 4px 8px;
-  border-radius: 99px;
-  display: flex;
-  gap: 5px;
-`
-
-const Header = styled.div`
-  background-color: #F9FAFC;
-  padding: 16px 10px;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  border-bottom: 1px solid #CBD5E1;
-  p {
-    margin: 0;
-    font-weight: 800;
-  }
-`
+import { TAssetsData } from "../interface/netAssets";
+import { Tab } from "../styles/components/Tab";
 
 const AssetsList = (props: TAssetsData) => {
   const { data: listOfAssets } = props;
