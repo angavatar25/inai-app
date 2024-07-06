@@ -77,7 +77,7 @@ const AssetsBalance = (props: TAssetBalance) => {
       </FlexBetween>
       <p>Realised gains:
         <Span $color="#15803D" $fontWeight={600}>
-          {assetByDate.realisedGainSign}{formattedAmount(assetByDate.realisedGains)}
+          {`${assetByDate.realisedGainSign}${formattedAmount(assetByDate.realisedGains)}`}
         </Span>
       </p>
       <p>{assetByDate.unrealisedGainSign === '+' ? 'Unrealised gains:' : 'Unrealised loss'}
@@ -85,7 +85,7 @@ const AssetsBalance = (props: TAssetBalance) => {
           $color={assetByDate.unrealisedGainSign === '+' ? '#15803D' : '#BE123C'}
           $fontWeight={600}
         >
-            {assetByDate.unrealisedGainSign}{formattedAmount(assetByDate.unrealisedGains)}
+          {`${assetByDate.unrealisedGainSign}${formattedAmount(assetByDate.unrealisedGains)}`}
         </Span>
       </p>
       <GrossIncomeTab
