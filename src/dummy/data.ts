@@ -717,8 +717,8 @@ export const GrossIncomeTabData: string[] = [
 ];
 
 export const GrossIncomeData = [
-  { flag: 'fy 2024', grossIncome: 9000, lessExpenses: 8950, netIncome: 50, growth: 4.4, sign: '+' },
-  { flag: 'quarter', grossIncome: 0, lessExpenses: 0, netIncome: 0, growth: 4.4, sign: '+' },
+  { flag: 'fy 2024', grossIncome: 1210000, lessExpenses: 608950, netIncome: 601050, growth: 4.4, sign: '-' },
+  { flag: 'quarter', grossIncome: 500000, lessExpenses: 300000, netIncome: 200000, growth: 4.4, sign: '-' },
 ]
 
 export const addNew: TAddNewData[] = [
