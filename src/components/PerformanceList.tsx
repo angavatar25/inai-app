@@ -29,24 +29,27 @@ const PerformanceList = (props: TData) => {
     setPerformanceData(performanceFiltered);
   }, [currentPortfolio])
 
-  return (
+return (
     <>
       {performanceData.map((performance, i) => (
         <ListContainer
           key={`performance-${i}`}
         >
           <p>{performance.text}</p>
-          <FlexOnly style={{ margin: 'auto 0', gap: '10px' }}>
-            {`${performance.sign ? performance.sign : ''}${formattedAmount(performance.amount)}`}
+          <div style={{ display: 'grid', gridTemplateColumns: '80px 80px', margin: 'auto 0', gap: '10px' }}>
+            <div style={{ textAlign: 'right' }}>
+              {`${performance.sign ? performance.sign : ''}${formattedAmount(performance.amount)}`}
+            </div>
             <Tag
               $color="#fff"
               $fontSize={12}
               $bgColor={tagSignColor({ sign: performance.sign as Sign })}
+              style={{ height: 'fit-content', width: 'fit-content' }}
             >
               {performance.sign ? (<FontAwesomeIcon icon={stockArrow(performance.sign)}/>) : ''}
               {`${performance.sign ? performance.sign : ''}${performance.growth}%`}
             </Tag>
-          </FlexOnly>
+          </div>
         </ListContainer>
       ))}
     </>

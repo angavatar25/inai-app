@@ -54,7 +54,7 @@ const AssetsList = (props: TAssetsData) => {
             </FlexBetween>
           </Tab>
           {asset.isOpen ? asset.list.map(list => (
-            <div key={`key-${list.name}`}>
+            <div key={`key-${list.id}`}>
               {list.entityTitle ?  
                 <Title
                   style={{ marginTop: '20px' }}
@@ -84,7 +84,7 @@ const AssetsList = (props: TAssetsData) => {
               </Header>
               {list.data.map((assetList) => (
                 <FlexBetween
-                  key={`list-assets-${assetList.name}`}
+                  key={`list-assets-${assetList.id}`}
                   style={{ borderBottom: '1px solid #E2E8F0', padding: '10px' }}
                 >
                   <p style={{ maxWidth: '100px', width: '100%', fontSize: '14px' }}>{assetList.name}</p>

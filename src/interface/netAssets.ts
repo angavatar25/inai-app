@@ -17,11 +17,13 @@ export interface TAssetData {
   growth: number;
   sign: string;
   entityTitle: string;
+  id: string;
   data: TAssets[];
 }
 
 export interface TAssets {
   name: string;
+  id: string;
   totalAsset: number;
   growth: number;
   sign: string;
