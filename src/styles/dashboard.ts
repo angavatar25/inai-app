@@ -1,8 +1,37 @@
-import styled from "styled-components"
+import styled from "styled-components";
+
+export const RouterContainer = styled.div`
+  @media screen and (min-width: 1280px) {  
+    background-color: #F4F4F4;
+    min-height: 100vh;
+    .content-container {
+      background-color: #fff;
+      max-width: 1280px;
+      width: 100%;
+      margin: auto;
+      position: relative;
+      display: flex;
+      flex: 1;
+      flex-grow: 1;
+      .flex-grow {
+        flex-grow: 1;
+      }
+    }
+  }
+`
 
 export const DashboardContainer = styled.div`
-  padding: 25px;
-  padding-top: 100px;
+  @media screen and (max-width: 1024px) {
+    padding: 25px;
+    padding-top: 100px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-top: 0px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+  }
 `
 export const Title = styled.p<{ $fontSize: number, $color?: string, $fontWeight?: number }>`
   margin: 0;

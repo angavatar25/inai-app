@@ -16,6 +16,14 @@ import { DataPerCountries, filterAssetsData, suggestedQueries } from "../../dumm
 
 const initialAssetData = DataPerCountries[0].data.listOfAssets;
 
+interface TType {
+  assetType: string;
+  total: number;
+  isOpen: boolean;
+  bgColor: string;
+  group: string;
+}
+
 const NetAssets = () => {
   const [currentCountry, setCurrentCountry] = useState('all');
   const [currentAssets, setCurrentAssets] = useState('assets class');
@@ -35,7 +43,7 @@ const NetAssets = () => {
     if (findAssetsByCountry) {
       const { data } = findAssetsByCountry;
 
-      const filterByGroup = data.listOfAssets.filter((data) => data.group === currentAssets);
+      const filterByGroup = data.listOfAssets.filter((data: TType) => data.group === currentAssets);
 
       setCurrentAssetsData(filterByGroup);
     }
@@ -43,56 +51,62 @@ const NetAssets = () => {
 
   return (
     <DashboardContainer>
-      <Title $fontSize={24}>Asset balances</Title>
-      <Button>
-        <FontAwesomeIcon icon={faMagicWandSparkles}/>
-        Ask AI assistant
-        <FontAwesomeIcon icon={faArrowRight}/>
-      </Button>
-      <div style={{ marginBottom: '20px' }}>
-        <Categories
-          onClickCategory={onClickCountryCategory}
-        />
-      </div>
-      <AssetsBalance
-        currentCountry={currentCountry}
-      />
-      <FlexBetween>
-        <p>Group By</p>
-        <div>
-          <PerformanceCategories
-            filterData={filterAssetsData}
-            onClickCategory={onClickPortfolioCategory}
-            currentTab={currentAssets}
+      <div>
+        <Title $fontSize={24}>Asset balances</Title>
+        <Button>
+          <FontAwesomeIcon icon={faMagicWandSparkles}/>
+          Ask AI assistant
+          <FontAwesomeIcon icon={faArrowRight}/>
+        </Button>
+        <div style={{ marginBottom: '20px' }}>
+          <Categories
+            onClickCategory={onClickCountryCategory}
           />
         </div>
-      </FlexBetween>
-      <AssetsList
-        data={currentAssetsData}
-      />
-      <Title
-        $fontSize={16}
-        $color="#000"
-        style={{ marginTop: '20px', fontWeight: 700 }}
-      >
-        AI suggested queries
-      </Title>
-      <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        {suggestedQueries.map((text) => (
-          <ButtonComponent
-            key={`suggestion-${text}`}
-            bgColor="#fff"
-            color="#475569"
-            borderColor="#CBD5E1"
-            lineHeight={40}
-            fontSize={14}
-            fontWeight={700}
-            style={{ justifyContent: 'left', paddingLeft: '20px' }}
+        <AssetsBalance
+          currentCountry={currentCountry}
+        />
+        <div>
+          <Title
+            $fontSize={16}
+            $color="#000"
+            style={{ marginTop: '20px', fontWeight: 700 }}
           >
-            <FontAwesomeIcon icon={faMagicWandSparkles}/>
-            {text}
-          </ButtonComponent>
-        ))}
+            AI suggested queries
+          </Title>
+          <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {suggestedQueries.map((text) => (
+              <ButtonComponent
+                key={`suggestion-${text}`}
+                bgColor="#fff"
+                color="#475569"
+                borderColor="#CBD5E1"
+                lineHeight={40}
+                fontSize={14}
+                fontWeight={700}
+                style={{ justifyContent: 'left', paddingLeft: '20px' }}
+              >
+                <FontAwesomeIcon icon={faMagicWandSparkles}/>
+                {text}
+              </ButtonComponent>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div>
+        <FlexBetween>
+          <p>Group By</p>
+          <div>
+            <PerformanceCategories
+              filterData={filterAssetsData}
+              onClickCategory={onClickPortfolioCategory}
+              currentTab={currentAssets}
+            />
+          </div>
+        </FlexBetween>
+        <AssetsList
+          data={currentAssetsData}
+        />
       </div>
     </DashboardContainer>
   )

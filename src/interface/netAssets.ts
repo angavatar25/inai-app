@@ -8,7 +8,6 @@ export interface TAssetList {
   isOpen: boolean;
   bgColor: string;
   group: string;
-  entityTitle: string;
   list: TAssetData[];
 }
 
@@ -17,6 +16,7 @@ export interface TAssetData {
   totalAssets: number;
   growth: number;
   sign: string;
+  entityTitle: string;
   data: TAssets[];
 }
 
