@@ -4,7 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+Before starting the project, please run the dependency install script:
+
+### npm install
+
+Then, in the project directory, you can run:
 
 ### `npm start`
 
@@ -51,10 +55,19 @@ Figma URL: https://www.figma.com/design/8hbd0bTl4e4FsnQhfI2rv3/InAI-Desktop?m=au
 - ## Dashboard Page
 ![Alt text](image-5.png)
 
-I made the component styling fully the same as the desktop version, with only distinction on component width. To make all the components are filling the screen space,
+I made the component styling fully the same as the desktop version, with only distinction on component width.
+To make all the components are filling the screen space,
 2 Grid were implemented to split the selected components into 2 different grid.
 
 - ## Asset Page
 ![Alt text](image-6.gif)
 
 The same consideration applies in the Asset Page, the only distinction is that, the scrollable asset list on the right. Assume that there are huge amount of data, rather than make the viewport scroll to the bottom, I make the asset list component to have the maximum height, assume that the rendered height is overflowing the maximum height of the component, then it will be a scrollable component.
+
+- ## Navigation Bar
+
+| Mobile Nav      | Desktop Nav      |
+| ------------- | ------------- |
+| ![Alt text](image-7.png) | ![Alt text](image-6.png) |
+
+To make the Navigation Bar reachable and streamlined with the Desktop layout, it sticks to left of the screen rather than forced to be the same as the mobile Navigation Bar
