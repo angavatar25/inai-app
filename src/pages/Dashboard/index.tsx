@@ -15,10 +15,14 @@ import { FlexBetween, MarginCenter } from "../../styles/general";
 
 import { GrossIncomeData, PerformanceData, addNew, filterGainsData, suggestedQueries } from "../../dummy/data";
 
+import useScreenQuery from "../../hooks/useScreenQuery";
+
 const Dashboard = () => {
   const [currentTabNew, setCurrentTabNew] = useState('asset');
   const [currentCountry, setCurrentCountry] = useState('all');
   const [currentPortfolio, setCurrentPortfolio] = useState('all');
+
+  const { isMobile, isDesktop } = useScreenQuery();
 
   const onClickTabNewAsset = (asset: string) => {
     setCurrentTabNew(asset);
@@ -71,31 +75,68 @@ const Dashboard = () => {
             </ButtonComponent>
           ))}
         </div>
-        <Title
-          $fontSize={18}
-          $color="#475569"
-          style={{ marginTop: '20px' }}
-        >
-          Portfolio Performance
-        </Title>
         <div>
-          <PerformanceCategories
-            filterData={filterGainsData}
-            onClickCategory={onClickPortfolioCategory}
-            currentTab={currentPortfolio}
-          />
-          <PerformanceList
-            data={PerformanceData}
-            currentPortfolio={currentPortfolio}
-          />
+          {isMobile && (
+            <>            
+              <Title
+                $fontSize={18}
+                $color="#475569"
+                style={{ marginTop: '20px' }}
+              >
+                Portfolio Performance
+              </Title>
+              <div>
+                <PerformanceCategories
+                  filterData={filterGainsData}
+                  onClickCategory={onClickPortfolioCategory}
+                  currentTab={currentPortfolio}
+                />
+                <PerformanceList
+                  data={PerformanceData}
+                  currentPortfolio={currentPortfolio}
+                />
+              </div>
+            </>
+          )}
+          {isDesktop && (
+            <div style={{ marginTop: '20px' }}>
+              <GrossIncome
+                data={GrossIncomeData}
+              />
+            </div>
+          )}
         </div>
       </div>
       <div>
-        <div style={{ marginTop: '20px' }}>
-          <GrossIncome
-            data={GrossIncomeData}
-          />
-        </div>
+        {isMobile && (
+          <div style={{ marginTop: '20px' }}>
+            <GrossIncome
+              data={GrossIncomeData}
+            />
+          </div>
+        )}
+        {isDesktop && (
+          <>            
+            <Title
+              $fontSize={18}
+              $color="#475569"
+              style={{ marginTop: '20px' }}
+            >
+              Portfolio Performance
+            </Title>
+            <div>
+              <PerformanceCategories
+                filterData={filterGainsData}
+                onClickCategory={onClickPortfolioCategory}
+                currentTab={currentPortfolio}
+              />
+              <PerformanceList
+                data={PerformanceData}
+                currentPortfolio={currentPortfolio}
+              />
+            </div>
+          </>
+        )}
         <Title
           $fontSize={16}
           $color="#000"

@@ -6,7 +6,7 @@ export const initialData = {
       return: 814603,
       assetsGrowth: 1.1,
       assetsGrowthSign: '+',
-      realisedGains: 500000,
+      realisedGains: 0,
       unrealisedGains: 314603,
       realisedGainSign: '+',
       unrealisedGainSign: '+',
@@ -33,6 +33,17 @@ export const assetByDateInitialData = {
   unrealisedGains: 314603,
   realisedGainSign: '+',
   unrealisedGainSign: '+',
+};
+
+export const assetByDateEmpty = {
+  key: 'quarter',
+  return: 0,
+  assetsGrowth: 0,
+  assetsGrowthSign: '',
+  realisedGains: 0,
+  unrealisedGains: 0,
+  realisedGainSign: '',
+  unrealisedGainSign: '',
 };
 
 

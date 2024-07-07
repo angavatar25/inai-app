@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with The Project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -8,39 +8,53 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setup Process & Project Structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. The project was created using `npx create-react-app` with TypeScript
+2. It is expected to have either `interface` or `type` for data type structure in the project.
+3. In the `src` directory, folders were created according to its own functionality:
+    - `components` directory contains the React Components.
+    - `helper` directory contains any data formatter.
+    - `pages` directory contains project pages to be rendered in the `page router`
+    - `interface` directory contains data type from every component.
+    - `styles` directory contains styling for general style and component style using `styled-components`.
+4. Router was defined in `App.tsx`, and using `react-responsive` library for ease of responsive styling.
+5. To run the project, please go to your local terminal and change your directory to the project, then type `npm install` to install project's dependencies.
+6. Finally, run the `npm start` script.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Assumptions
 
-### `npm run build`
+1. Unavailable data in assets balance list.
+![Alt text](image.png)
+    
+    It will render a message to inform the user that the assets is not available based on the group and country filter.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. 0 money gains on unavailable date filter in Net asset
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Positive gain      | No gain      | Negative gain      |
+| ------------- | ------------- | ------------- |
+| ![Alt text](image-1.png) | ![Alt text](image-4.png) | ![Alt text](image-3.png) |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Assume that no data available by `Month` and `Day` filter, hence it will return 0 with black coloured text.
 
-### `npm run eject`
+3. Scrollable asset list in Desktop
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Alt text](image-5.gif)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Design consideration
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Figma URL: https://www.figma.com/design/8hbd0bTl4e4FsnQhfI2rv3/InAI-Desktop?m=auto&t=3MdcjVAQa63eBrNv-1
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### This only applies in desktop version
 
-## Learn More
+- ## Dashboard Page
+![Alt text](image-5.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I made the component styling fully the same as the desktop version, with only distinction on component width. To make all the components are filling the screen space,
+2 Grid were implemented to split the selected components into 2 different grid.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- ## Asset Page
+![Alt text](image-6.gif)
+
+The same consideration applies in the Asset Page, the only distinction is that, the scrollable asset list on the right. Assume that there are huge amount of data, rather than make the viewport scroll to the bottom, I make the asset list component to have the maximum height, assume that the rendered height is overflowing the maximum height of the component, then it will be a scrollable component.

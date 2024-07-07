@@ -14,9 +14,11 @@ import { Title } from "../styles/dashboard";
 import { CardContainer, MoneyFontSize } from "../styles/components/Card";
 
 import { DataPerCountries } from "../dummy/data";
-import { assetByDateInitialData, initialData } from "../dummy/initialData";
+import { assetByDateEmpty, assetByDateInitialData, initialData } from "../dummy/initialData";
 
 import { TAssetBalance, TAssetBalanceData, TAssetByDate } from "../interface/dashboard";
+import { growthSignColor } from "../helper/signColor";
+import { Sign } from "../enum/sign";
 
 const AssetsBalance = (props: TAssetBalance) => {
   const [currentTab, setCurrentTab] = useState('fy 2024');
@@ -39,6 +41,8 @@ const AssetsBalance = (props: TAssetBalance) => {
 
       if (findByDate) {
         setAssetByDate(findByDate);
+      } else {
+        setAssetByDate(assetByDateEmpty)
       }
     }
   }, [currentTab, props.currentCountry]);
@@ -60,29 +64,38 @@ const AssetsBalance = (props: TAssetBalance) => {
           <MoneyFontSize>{formattedAmount(incomeData.netAssets)}</MoneyFontSize>
           <FlexOnly $gap={10}>
             <Title $fontSize={18}>
-              Returns: <Span $color="#22C55E" $fontWeight={600}>
+              Returns:
+              <Span
+                $color={growthSignColor({ sign: assetByDate.assetsGrowthSign as Sign })}
+                $fontWeight={600}
+              >
                 {`${assetByDate.assetsGrowthSign}${formattedAmount(assetByDate.return)}`}
               </Span>
             </Title>
-            <Tag
-              $color="#fff"
-              $fontSize={12}
-              $bgColor="#22C55E"
-            >
-              <FontAwesomeIcon icon={faArrowTrendUp}/>
-              {`${assetByDate.assetsGrowthSign}${assetByDate.assetsGrowth}`}
-            </Tag>
+            {assetByDate.return > 0 ? (
+              <Tag
+                $color="#fff"
+                $fontSize={12}
+                $bgColor="#22C55E"
+              >
+                <FontAwesomeIcon icon={faArrowTrendUp}/>
+                {`${assetByDate.assetsGrowthSign}${assetByDate.assetsGrowth}`}
+              </Tag>
+            ) : null}
           </FlexOnly>
         </div>
       </FlexBetween>
       <p>Realised gains:
-        <Span $color="#15803D" $fontWeight={600}>
+        <Span
+          $color={growthSignColor({ sign: assetByDate.realisedGainSign as Sign })}
+          $fontWeight={600}
+        >
           {`${assetByDate.realisedGainSign}${formattedAmount(assetByDate.realisedGains)}`}
         </Span>
       </p>
-      <p>{assetByDate.unrealisedGainSign === '+' ? 'Unrealised gains:' : 'Unrealised loss'}
+      <p>{assetByDate.unrealisedGainSign === '+' || !assetByDate.unrealisedGainSign ? 'Unrealised gains:' : 'Unrealised loss'}
         <Span
-          $color={assetByDate.unrealisedGainSign === '+' ? '#15803D' : '#BE123C'}
+          $color={growthSignColor({ sign: assetByDate.unrealisedGainSign as Sign })}
           $fontWeight={600}
         >
           {`${assetByDate.unrealisedGainSign}${formattedAmount(assetByDate.unrealisedGains)}`}

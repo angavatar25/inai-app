@@ -1,13 +1,14 @@
+import { BrowserRouter as Router, useRoutes } from "react-router-dom";
+
 import './App.css';
 import Navbar from './components/Navbar';
+import NavbarDesktop from './components/NavbarDesktop';
 
 import Dashboard from './pages/Dashboard';
 import NetAssets from './pages/NetAssets';
 
-import { BrowserRouter as Router, useRoutes } from "react-router-dom";
 import { RouterContainer } from './styles/dashboard';
-import NavbarDesktop from './components/NavbarDesktop';
-import { useMediaQuery } from 'react-responsive';
+import useScreenQuery from "./hooks/useScreenQuery";
 
 const AppRouter = () => {
   let routes = useRoutes([
@@ -19,8 +20,7 @@ const AppRouter = () => {
 }
 
 function App() {
-  const isDesktop = useMediaQuery({ minWidth: 1280 });
-  const isMobile = useMediaQuery({ maxWidth: 1024 });
+  const { isMobile, isDesktop } = useScreenQuery();
 
   return (
     <Router>
