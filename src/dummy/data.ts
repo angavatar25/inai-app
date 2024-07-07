@@ -1,5 +1,7 @@
 import { faBuilding, faHandHoldingDollar } from "@fortawesome/free-solid-svg-icons";
 
+import { v4 as uuidv4 } from 'uuid';
+
 import Globe from '../public/assets/globe.svg';
 import AustraliaFlag from '../public/assets/flag-australia.svg';
 import UsaFlag from '../public/assets/flags-usa.svg';
@@ -66,6 +68,7 @@ export const DataPerCountries = [
             {
               entityTitle: '',
               name: 'NAB',
+              id: uuidv4(),
               totalAssets: 6747000,
               growth: 0,
               sign: '',
@@ -73,6 +76,7 @@ export const DataPerCountries = [
                 {
                   name: 'Morgan Supperannuation Fund',
                   totalAsset: 1128000,
+                  id: uuidv4(),
                   growth: 0,
                   sign: '',
                 }
@@ -91,11 +95,13 @@ export const DataPerCountries = [
               entityTitle: '',
               name: 'NAB',
               totalAssets: 6747000,
+              id: uuidv4(),
               growth: 0,
               sign: '',
               data: [
                 {
                   name: 'Morgan Supperannuation Fund',
+                  id: uuidv4(),
                   totalAsset: 1128000,
                   growth: 0,
                   sign: '',
@@ -115,23 +121,27 @@ export const DataPerCountries = [
               entityTitle: 'Listed shares',
               name: 'NYSY',
               totalAssets: 4115942,
+              id: uuidv4(),
               growth: 2.5,
               sign: '-',
               data: [
                 {
                   name: '(NYSE:FN) Fabrinet',
                   totalAsset: 1214594,
+                  id: uuidv4(),
                   growth: 7.6,
                   sign: '+',
                 },
                 {
                   name: '(NYSE:IOT) Samsara Inc.',
+                  id: uuidv4(),
                   totalAsset: 22385,
                   growth: 5.2,
                   sign: '+',
                 },
                 {
                   name: '(NYSE:ALK) Alaska Air Group, Inc.',
+                  id: uuidv4(),
                   totalAsset: 2878963,
                   growth: 6.2,
                   sign: '-',
@@ -150,12 +160,14 @@ export const DataPerCountries = [
             {
               entityTitle: 'Private equity',
               name: 'Global ventures 2 Unit',
+              id: uuidv4(),
               totalAssets: 929340,
               growth: 21.7,
               sign: '+',
               data: [
                 {
                   name: 'TravelPlan',
+                  id: uuidv4(),
                   totalAsset: 929340,
                   growth: 21.7,
                   sign: '+',
@@ -174,12 +186,14 @@ export const DataPerCountries = [
             {
               entityTitle: 'Private equity',
               name: 'Global ventures 2 Unit',
+              id: uuidv4(),
               totalAssets: 1474171,
               growth: 21.7,
               sign: '+',
               data: [
                 {
                   name: 'CodeAI',
+                  id: uuidv4(),
                   totalAsset: 1474171,
                   growth: 41,
                   sign: '+',
@@ -198,6 +212,7 @@ export const DataPerCountries = [
             {
               entityTitle: 'Private property',
               name: 'Global ventures 2 Unit',
+              id: uuidv4(),
               totalAssets: 1474171,
               growth: 21.7,
               sign: '+',
@@ -205,6 +220,7 @@ export const DataPerCountries = [
                 {
                   name: 'CodeAI',
                   totalAsset: 1474171,
+                  id: uuidv4(),
                   growth: 41,
                   sign: '+',
                 },
@@ -213,6 +229,7 @@ export const DataPerCountries = [
             {
               entityTitle: 'Private equity',
               name: 'Global ventures 2 Unit',
+              id: uuidv4(),
               totalAssets: 1474171,
               growth: 21.7,
               sign: '+',
@@ -220,6 +237,7 @@ export const DataPerCountries = [
                 {
                   name: 'CodeAI',
                   totalAsset: 1474171,
+                  id: uuidv4(),
                   growth: 41,
                   sign: '+',
                 },
@@ -277,12 +295,14 @@ export const DataPerCountries = [
             {
               entityTitle: '',
               name: 'NAB',
+              id :'nab-bank-accounts-australia',
               totalAssets: 6747000,
               growth: 0,
               sign: '',
               data: [
                 {
                   name: 'Morgan Supperannuation Fund',
+                  id: uuidv4(),
                   totalAsset: 1128000,
                   growth: 0,
                   sign: '',
@@ -292,18 +312,21 @@ export const DataPerCountries = [
             {
               entityTitle: '',
               name: 'ANZ',
+              id: uuidv4(),
               totalAssets: 812000,
               growth: 0,
               sign: '',
               data: [
                 {
                   name: 'Morgan Global Ventures Inc. ATF  Morgan Fam...',
+                  id: uuidv4(),
                   totalAsset: 347000,
                   growth: 0,
                   sign: '',
                 },
                 {
                   name: 'T&E Morgan (Personal)',
+                  id: uuidv4(),
                   totalAsset: 482000,
                   growth: 0,
                   sign: '',
@@ -313,12 +336,14 @@ export const DataPerCountries = [
             {
               entityTitle: '',
               name: 'Citibank',
+              id: uuidv4(),
               totalAssets: 248000,
               growth: 0,
               sign: '',
               data: [
                 {
                   name: 'J&W Morgan (Personal)',
+                  id: uuidv4(),
                   totalAsset: 248000,
                   growth: 0,
                   sign: '',
@@ -338,29 +363,34 @@ export const DataPerCountries = [
               entityTitle: '',
               name: 'Morgan Management',
               totalAssets: 6753635,
+              id: uuidv4(),
               growth: 4.5,
               sign: '+',
               data: [
                 {
                   name: 'Regal Resources Long-short Fund',
+                  id: uuidv4(),
                   totalAsset: 1999110,
                   growth: 3.8,
                   sign: '+',
                 },
                 {
                   name: 'Regal Partners Private Fund',
+                  id: uuidv4(),
                   totalAsset: 3442286,
                   growth: 3.8,
                   sign: '+',
                 },
                 {
                   name: 'Regal Resources High Conviction Fund',
+                  id: uuidv4(),
                   totalAsset: 964681,
                   growth: 9,
                   sign: '+',
                 },
                 {
                   name: 'Cash at bank',
+                  id: uuidv4(),
                   totalAsset: 54099,
                   growth: 0,
                   sign: '',
@@ -370,12 +400,14 @@ export const DataPerCountries = [
             {
               entityTitle: '',
               name: 'PM Capital',
+              id: uuidv4(),
               totalAssets: 3349366,
               growth: 0.1,
               sign: '+',
               data: [
                 {
                   name: 'PM Capital',
+                  id: uuidv4(),
                   totalAsset: 3349366,
                   growth: 0.1,
                   sign: '+',
@@ -385,18 +417,21 @@ export const DataPerCountries = [
             {
               entityTitle: '',
               name: 'Australian Eagle',
+              id: uuidv4(),
               totalAssets: 1465108,
               growth: 0.5,
               sign: '+',
               data: [
                 {
                   name: 'Australian Eagle Trust',
+                  id: uuidv4(),
                   totalAsset: 732554,
                   growth: 0.5,
                   sign: '+',
                 },
                 {
                   name: 'Australian Eagle Equity Strategy',
+                  id: uuidv4(),
                   totalAsset: 732554,
                   growth: 0.5,
                   sign: '+',
@@ -405,13 +440,15 @@ export const DataPerCountries = [
             },
             {
               name: 'Regal Management Fund',
+              id: uuidv4(),
               totalAssets: 859155,
               growth: 12.2,
               sign: '+',
+              entityTitle: '',
               data: [
                 {
-                  entityTitle: '',
                   name: 'Regal Management Fund',
+                  id: uuidv4(),
                   totalAsset: 859155,
                   growth: 12.2,
                   sign: '+',
@@ -430,24 +467,28 @@ export const DataPerCountries = [
             {
               entityTitle: 'Listed shares',
               name: 'NYSY',
+              id: uuidv4(),
               totalAssets: 4115942,
               growth: 2.5,
               sign: '-',
               data: [
                 {
                   name: '(NYSE:FN) Fabrinet',
+                  id: uuidv4(),
                   totalAsset: 1214594,
                   growth: 7.6,
                   sign: '+',
                 },
                 {
                   name: '(NYSE:IOT) Samsara Inc.',
+                  id: uuidv4(),
                   totalAsset: 22385,
                   growth: 5.2,
                   sign: '+',
                 },
                 {
                   name: '(NYSE:ALK) Alaska Air Group, Inc.',
+                  id: uuidv4(),
                   totalAsset: 2878963,
                   growth: 6.2,
                   sign: '-',
@@ -466,12 +507,14 @@ export const DataPerCountries = [
             {
               entityTitle: 'Private equity',
               name: 'Global ventures 2 Unit',
+              id: uuidv4(),
               totalAssets: 929340,
               growth: 21.7,
               sign: '+',
               data: [
                 {
                   name: 'TravelPlan',
+                  id: uuidv4(),
                   totalAsset: 929340,
                   growth: 21.7,
                   sign: '+',
@@ -530,12 +573,14 @@ export const DataPerCountries = [
             {
               entityTitle: '',
               name: 'Citibank',
+              id: uuidv4(),
               totalAssets: 2480000,
               growth: 0,
               sign: '',
               data: [
                 {
                   name: 'J&W Morgan (Personal)',
+                  id: uuidv4(),
                   totalAsset: 248999,
                   growth: 0,
                   sign: '',
@@ -545,12 +590,14 @@ export const DataPerCountries = [
             {
               entityTitle: '',
               name: 'Bank of America',
+              id: uuidv4(),
               totalAssets: 212000,
               growth: 0,
               sign: '',
               data: [
                 {
                   name: 'J&W Morgan (Personal)',
+                  id: uuidv4(),
                   totalAsset: 212000,
                   growth: 0,
                   sign: '',
@@ -569,24 +616,28 @@ export const DataPerCountries = [
             {
               entityTitle: '',
               name: 'NYSY',
+              id: uuidv4(),
               totalAssets: 4115942,
               growth: 0.43,
               sign: '-',
               data: [
                 {
                   name: '(NYSE:FN) Fabrinet',
+                  id: uuidv4(),
                   totalAsset: 1214594,
                   growth: 2.8,
                   sign: '+',
                 },
                 {
                   name: '(NYSE:IOT) Samsara Inc.',
+                  id: uuidv4(),
                   totalAsset: 22385,
                   growth: 4.2,
                   sign: '+',
                 },
                 {
                   name: '(NYSE:ALK) Alaska Air Group, Inc.',
+                  id: uuidv4(),
                   totalAsset: 2878963,
                   growth: 1.7,
                   sign: '-',
@@ -605,24 +656,28 @@ export const DataPerCountries = [
             {
               entityTitle: 'Listed shares',
               name: 'NYSY',
+              id: uuidv4(),
               totalAssets: 4115942,
               growth: 2.5,
               sign: '-',
               data: [
                 {
                   name: '(NYSE:FN) Fabrinet',
+                  id: uuidv4(),
                   totalAsset: 1214594,
                   growth: 7.6,
                   sign: '+',
                 },
                 {
                   name: '(NYSE:IOT) Samsara Inc.',
+                  id: uuidv4(),
                   totalAsset: 22385,
                   growth: 5.2,
                   sign: '+',
                 },
                 {
                   name: '(NYSE:ALK) Alaska Air Group, Inc.',
+                  id: uuidv4(),
                   totalAsset: 2878963,
                   growth: 6.2,
                   sign: '-',
@@ -681,12 +736,14 @@ export const DataPerCountries = [
             {
               entityTitle: '',
               name: 'Riverside',
+              id: uuidv4(),
               totalAssets: 250733,
               growth: 1.6,
               sign: '+',
               data: [
                 {
                   name: 'Riberside Europe Fund',
+                  id: uuidv4(),
                   totalAsset: 250733,
                   growth: 1.6,
                   sign: '+',
