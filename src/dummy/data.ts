@@ -62,9 +62,9 @@ export const DataPerCountries = [
           isOpen: true,
           bgColor: '#01B7D4',
           group: 'assets class',
-          entityTitle: '',
           list: [
             {
+              entityTitle: '',
               name: 'NAB',
               totalAssets: 6747000,
               growth: 0,
@@ -86,9 +86,9 @@ export const DataPerCountries = [
           isOpen: true,
           bgColor: '#FA7315',
           group: 'assets class',
-          entityTitle: '',
           list: [
             {
+              entityTitle: '',
               name: 'NAB',
               totalAssets: 6747000,
               growth: 0,
@@ -110,9 +110,9 @@ export const DataPerCountries = [
           isOpen: true,
           bgColor: '#64748B',
           group: 'entity',
-          entityTitle: 'Listed shares',
           list: [
             {
+              entityTitle: 'Listed shares',
               name: 'NYSY',
               totalAssets: 4115942,
               growth: 2.5,
@@ -141,14 +141,14 @@ export const DataPerCountries = [
           ]
         },
         {
-          assetType: 'T&E Morgan Pty LTS',
+          assetType: 'T&E Morgan Pty ATF',
           total: 929340,
           isOpen: true,
           bgColor: '#64748B',
           group: 'entity',
-          entityTitle: 'Private equity',
           list: [
             {
+              entityTitle: 'Private equity',
               name: 'Global ventures 2 Unit',
               totalAssets: 929340,
               growth: 21.7,
@@ -158,6 +158,69 @@ export const DataPerCountries = [
                   name: 'TravelPlan',
                   totalAsset: 929340,
                   growth: 21.7,
+                  sign: '+',
+                },
+              ]
+            },
+          ]
+        },
+        {
+          assetType: 'Morgan Global Ventures inc.',
+          total: 3967326,
+          isOpen: true,
+          bgColor: '#64748B',
+          group: 'entity',
+          list: [
+            {
+              entityTitle: 'Private equity',
+              name: 'Global ventures 2 Unit',
+              totalAssets: 1474171,
+              growth: 21.7,
+              sign: '+',
+              data: [
+                {
+                  name: 'CodeAI',
+                  totalAsset: 1474171,
+                  growth: 41,
+                  sign: '+',
+                },
+              ]
+            },
+          ]
+        },
+        {
+          assetType: 'Morgan Global Venture Inc',
+          total: 2493155,
+          isOpen: true,
+          bgColor: '#64748B',
+          group: 'entity',
+          list: [
+            {
+              entityTitle: 'Private property',
+              name: 'Global ventures 2 Unit',
+              totalAssets: 1474171,
+              growth: 21.7,
+              sign: '+',
+              data: [
+                {
+                  name: 'CodeAI',
+                  totalAsset: 1474171,
+                  growth: 41,
+                  sign: '+',
+                },
+              ]
+            },
+            {
+              entityTitle: 'Private equity',
+              name: 'Global ventures 2 Unit',
+              totalAssets: 1474171,
+              growth: 21.7,
+              sign: '+',
+              data: [
+                {
+                  name: 'CodeAI',
+                  totalAsset: 1474171,
+                  growth: 41,
                   sign: '+',
                 },
               ]
@@ -210,9 +273,9 @@ export const DataPerCountries = [
           isOpen: true,
           bgColor: '#01B7D4',
           group: 'assets class',
-          entityTitle: '',
           list: [
             {
+              entityTitle: '',
               name: 'NAB',
               totalAssets: 6747000,
               growth: 0,
@@ -227,6 +290,7 @@ export const DataPerCountries = [
               ]
             },
             {
+              entityTitle: '',
               name: 'ANZ',
               totalAssets: 812000,
               growth: 0,
@@ -247,6 +311,7 @@ export const DataPerCountries = [
               ]
             },
             {
+              entityTitle: '',
               name: 'Citibank',
               totalAssets: 248000,
               growth: 0,
@@ -268,9 +333,9 @@ export const DataPerCountries = [
           isOpen: true,
           bgColor: '#FA7315',
           group: 'assets class',
-          entityTitle: '',
           list: [
             {
+              entityTitle: '',
               name: 'Morgan Management',
               totalAssets: 6753635,
               growth: 4.5,
@@ -303,6 +368,7 @@ export const DataPerCountries = [
               ]
             },
             {
+              entityTitle: '',
               name: 'PM Capital',
               totalAssets: 3349366,
               growth: 0.1,
@@ -317,6 +383,7 @@ export const DataPerCountries = [
               ]
             },
             {
+              entityTitle: '',
               name: 'Australian Eagle',
               totalAssets: 1465108,
               growth: 0.5,
@@ -343,6 +410,7 @@ export const DataPerCountries = [
               sign: '+',
               data: [
                 {
+                  entityTitle: '',
                   name: 'Regal Management Fund',
                   totalAsset: 859155,
                   growth: 12.2,
@@ -351,7 +419,67 @@ export const DataPerCountries = [
               ]
             },
           ]
-        }
+        },
+        {
+          assetType: 'Morgan Supperannuation',
+          total: 4115942,
+          isOpen: true,
+          bgColor: '#64748B',
+          group: 'entity',
+          list: [
+            {
+              entityTitle: 'Listed shares',
+              name: 'NYSY',
+              totalAssets: 4115942,
+              growth: 2.5,
+              sign: '-',
+              data: [
+                {
+                  name: '(NYSE:FN) Fabrinet',
+                  totalAsset: 1214594,
+                  growth: 7.6,
+                  sign: '+',
+                },
+                {
+                  name: '(NYSE:IOT) Samsara Inc.',
+                  totalAsset: 22385,
+                  growth: 5.2,
+                  sign: '+',
+                },
+                {
+                  name: '(NYSE:ALK) Alaska Air Group, Inc.',
+                  totalAsset: 2878963,
+                  growth: 6.2,
+                  sign: '-',
+                },
+              ]
+            },
+          ]
+        },
+        {
+          assetType: 'T&E Morgan Pty ATF',
+          total: 929340,
+          isOpen: true,
+          bgColor: '#64748B',
+          group: 'entity',
+          list: [
+            {
+              entityTitle: 'Private equity',
+              name: 'Global ventures 2 Unit',
+              totalAssets: 929340,
+              growth: 21.7,
+              sign: '+',
+              data: [
+                {
+                  name: 'TravelPlan',
+                  totalAsset: 929340,
+                  growth: 21.7,
+                  sign: '+',
+                },
+              ]
+            },
+          ]
+        },
       ]
     }
   },
@@ -398,9 +526,9 @@ export const DataPerCountries = [
           isOpen: true,
           bgColor: '#01B7D4',
           group: 'assets class',
-          entityTitle: '',
           list: [
             {
+              entityTitle: '',
               name: 'Citibank',
               totalAssets: 2480000,
               growth: 0,
@@ -415,6 +543,7 @@ export const DataPerCountries = [
               ]
             },
             {
+              entityTitle: '',
               name: 'Bank of America',
               totalAssets: 212000,
               growth: 0,
@@ -436,9 +565,9 @@ export const DataPerCountries = [
           isOpen: true,
           bgColor: '#FCD34D',
           group: 'assets class',
-          entityTitle: '',
           list: [
             {
+              entityTitle: '',
               name: 'NYSY',
               totalAssets: 4115942,
               growth: 0.43,
@@ -464,6 +593,42 @@ export const DataPerCountries = [
                 },
               ]
             }
+          ]
+        },
+        {
+          assetType: 'Morgan Supperannuation',
+          total: 4115942,
+          isOpen: true,
+          bgColor: '#64748B',
+          group: 'entity',
+          list: [
+            {
+              entityTitle: 'Listed shares',
+              name: 'NYSY',
+              totalAssets: 4115942,
+              growth: 2.5,
+              sign: '-',
+              data: [
+                {
+                  name: '(NYSE:FN) Fabrinet',
+                  totalAsset: 1214594,
+                  growth: 7.6,
+                  sign: '+',
+                },
+                {
+                  name: '(NYSE:IOT) Samsara Inc.',
+                  totalAsset: 22385,
+                  growth: 5.2,
+                  sign: '+',
+                },
+                {
+                  name: '(NYSE:ALK) Alaska Air Group, Inc.',
+                  totalAsset: 2878963,
+                  growth: 6.2,
+                  sign: '-',
+                },
+              ]
+            },
           ]
         }
       ]
@@ -512,9 +677,9 @@ export const DataPerCountries = [
           isOpen: true,
           bgColor: '#FDBA74',
           group: 'assets class',
-          entityTitle: '',
           list: [
             {
+              entityTitle: '',
               name: 'Riverside',
               totalAssets: 250733,
               growth: 1.6,
@@ -527,7 +692,7 @@ export const DataPerCountries = [
                   sign: '+',
                 },
               ]
-            }
+            },
           ]
         },
       ]

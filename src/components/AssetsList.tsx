@@ -1,12 +1,16 @@
+import { useEffect, useState } from "react";
+
 import { faChevronRight, faFolderOpen, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styled from "styled-components";
+
 import { FlexBetween, FlexOnly, Header, MarginCenter, Tag } from "../styles/general";
-import formattedAmount from "../helper/moneyFormatter";
-import { useEffect, useState } from "react";
 import { Title } from "../styles/dashboard";
-import { TAssetsData } from "../interface/netAssets";
 import { Tab } from "../styles/components/Tab";
+import { AssetAmount, AssetListContainer } from "../styles/components/AssetsList";
+
+import formattedAmount from "../helper/moneyFormatter";
+
+import { TAssetsData } from "../interface/netAssets";
 
 const AssetsList = (props: TAssetsData) => {
   const { data: listOfAssets } = props;
@@ -24,9 +28,11 @@ const AssetsList = (props: TAssetsData) => {
   }, [listOfAssets])
 
   return (
-    <>
+    <AssetListContainer>
       {listOfAssets.length > 0 ? tabs.map((asset) => (
-        <div key={`tab-${asset.assetType}`}>
+        <div
+          key={`tab-${asset.assetType}`}
+        >
           <Tab
             $bgColor={asset.bgColor}
             onClick={() => toggleTab(asset.assetType)}
@@ -47,9 +53,18 @@ const AssetsList = (props: TAssetsData) => {
               </Tag>
             </FlexBetween>
           </Tab>
-          {asset.isOpen && asset.entityTitle ? <Title $fontSize={20} $color="#475569" $fontWeight={600}>{asset.entityTitle}</Title> : null}
           {asset.isOpen ? asset.list.map(list => (
             <div key={`key-${list.name}`}>
+              {list.entityTitle ?  
+                <Title
+                  style={{ marginTop: '20px' }}
+                  $fontSize={20}
+                  $color="#475569"
+                  $fontWeight={600}
+                >
+                  {list.entityTitle}
+                </Title> : null
+              }
               <Header>
                 <Title $fontSize={14} $color="#000">{list.name}</Title>
                 <FlexOnly $gap={5}>
@@ -75,7 +90,7 @@ const AssetsList = (props: TAssetsData) => {
                   <p style={{ maxWidth: '100px', width: '100%', fontSize: '14px' }}>{assetList.name}</p>
                   <FlexOnly $gap={10}>
                     <MarginCenter style={{ textAlign: 'right'}}>
-                      <p style={{ margin: 0, marginBottom: '10px', fontWeight: 700, fontSize: '14px' }}>{formattedAmount(assetList.totalAsset)}</p>
+                      <AssetAmount>{formattedAmount(assetList.totalAsset)}</AssetAmount>
                       {assetList.growth ? (
                         <p style={{ color: assetList.sign === '+' ? '#15803D' : '#BE123C', margin: 0, fontWeight: 700, fontSize: '12px' }}>
                           {`${assetList.sign}${assetList.growth}%`}
@@ -98,7 +113,7 @@ const AssetsList = (props: TAssetsData) => {
           <Title $fontSize={24}>Assets not available</Title>
         </div>
       )}
-    </>
+    </AssetListContainer>
   )
 };
 

@@ -11,5 +11,5 @@ export const Tab = styled.div<{ $bgColor: string }>`
   border-radius: 99px;
   padding: 10px;
   color: #fff;
-  margin: 10px 0 20px 0;
+  margin: 20px 0 0 0;
 `
