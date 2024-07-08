@@ -1,10 +1,8 @@
 import { useState } from 'react';
 
-import styled from 'styled-components';
-
 import { TCategories } from '../interface/components';
 import { countries } from '../dummy/data';
-import { ButtonCountry, ButtonStyling } from '../styles/components/Button';
+import { ButtonCountry } from '../styles/components/Button';
 
 const Categories = (props: TCategories) => {
   const [currentCategory, setCurrentCategory] = useState('all');
